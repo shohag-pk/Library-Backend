@@ -1,6 +1,7 @@
 package seu.edu.bd.library.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
@@ -20,6 +21,20 @@ public class BookController {
 
     @Autowired
     private MapValidationErrorService mapValidationErrorService;
+
+    @Value("${coach.name}")
+    private String coachName;
+
+    @Value("${developer.name}")
+    private String developerName;
+
+    @Value("${developer.id}")
+    private String developerId;
+
+    @GetMapping("/appInfo")
+    public  String getAppInfo() {
+        return  "Coach: " + coachName +", Developer Name : " + developerName + " , Developer ID: " + developerId;
+    }
 
     @PostMapping("")
     public ResponseEntity<?> createNewBook(@Valid @RequestBody Book book, BindingResult result){

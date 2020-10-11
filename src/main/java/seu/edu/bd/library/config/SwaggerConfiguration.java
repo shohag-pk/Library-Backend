@@ -18,8 +18,8 @@ public class SwaggerConfiguration {
     public Docket createRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(new ApiInfoBuilder()
-                        .description("Developed By - Emran Ibn Shayed")
-                        .title("EIS - Blood Donate App")
+                        .description("Developed By - Al Amin Hosain")
+                        .title("library management system app")
                         .version("1.0.0")
                         .build())
                 .select()
